@@ -1,6 +1,10 @@
 window.onload = function() {
   //write your code here
 
+  let sentence = document.getElementById("excuse");
+  sentence.innerHTML = excuseGenerator();
+};
+function excuseGenerator() {
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
   let action = ["ate", "peed on", "crushed", "broke"];
   let what = ["my homework", "my phone", "the car"];
@@ -17,10 +21,5 @@ window.onload = function() {
   let part3 = Math.floor(Math.random() * what.length);
   let part4 = Math.floor(Math.random() * when.length);
 
-  let excuse = document.write(
-    `${who[part1]} ${action[part2]} ${what[part3]} ${when[part4]}`
-  );
-
-  let sentence = document.getElementById("excuse");
-  sentence.innerHTML = excuse;
-};
+  return `${who[part1]} ${action[part2]} ${what[part3]} ${when[part4]}`;
+}
